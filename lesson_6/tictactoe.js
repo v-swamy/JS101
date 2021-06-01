@@ -3,8 +3,8 @@ let readline = require('readline-sync');
 const INITIAL_MARKER = ' ';
 const HUMAN_MARKER = 'X';
 const COMPUTER_MARKER = 'O';
-const GOES_FIRST = 'computer';
-const MATCH_WINS_NEEDED = 2;
+const GOES_FIRST = 'choose';
+const MATCH_WINS_NEEDED = 5;
 const WINNING_LINES = [
   [1, 2, 3], [4, 5, 6], [7, 8, 9], // rows
   [1, 4, 7], [2, 5, 8], [3, 6, 9], // columns
@@ -207,7 +207,7 @@ while (true) {
   let board = initializeBoard();
   let currentPlayer;
   if (GOES_FIRST === 'choose') {
-    prompt('Who goes first? (P)layer or (C)omputer.)');
+    prompt('Who goes first? (P)layer or (C)omputer.');
     let answer = readline.question().toLowerCase()[0];
     if (answer === 'p') {
       currentPlayer = 'player';
